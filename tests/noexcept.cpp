@@ -21,7 +21,7 @@ TEST_CASE("Noexcept", "[noexcept]") {
   }
 
   SECTION("swap") {
-      //TODO see why this fails
+    // TODO see why this fails
 #if !defined(_MSC_VER) || _MSC_VER > 1900
     REQUIRE(noexcept(swap(o1, o2)) == noexcept(o1.swap(o2)));
 
@@ -43,11 +43,11 @@ TEST_CASE("Noexcept", "[noexcept]") {
 
     REQUIRE(noexcept(ont.swap(ont)));
     REQUIRE(!noexcept(ot.swap(ot)));
-    #endif
+#endif
   }
 
   SECTION("constructors") {
-      //TODO see why this fails
+    // TODO see why this fails
 #if !defined(_MSC_VER) || _MSC_VER > 1900
     REQUIRE(noexcept(tl::optional<int>{}));
     REQUIRE(noexcept(tl::optional<int>{tl::nullopt}));
@@ -93,7 +93,7 @@ TEST_CASE("Noexcept", "[noexcept]") {
 
   SECTION("observers") {
     REQUIRE(noexcept(static_cast<bool>(o1)));
-    REQUIRE(noexcept(o1.has_value()));
+    REQUIRE(noexcept(o1.hasValue()));
   }
 
   SECTION("modifiers") { REQUIRE(noexcept(o1.reset())); }

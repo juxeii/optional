@@ -15,7 +15,7 @@ find_program(DPKG_BUILDPACKAGE_FOUND dpkg-buildpackage)
 find_program(RPMBUILD_FOUND rpmbuild)
 
 if (NOT DEFINED CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
+  set(CMAKE_CXX_STANDARD 17)
 endif()
 
 option(OPTIONAL_BUILD_PACKAGE "Build packages" ON)
