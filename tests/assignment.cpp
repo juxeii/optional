@@ -23,14 +23,6 @@ TEST_CASE("Assignment value", "[assignment.value]") {
 
   o1 = std::move(o2);
   REQUIRE(o1 == 12);
-
-  tl::optional<short> o4 = 42;
-
-  o1 = o4;
-  REQUIRE(o1 == 42);
-
-  o1 = std::move(o4);
-  REQUIRE(o1 == 42);
 }
 
 TEST_CASE("Assignment reference", "[assignment.ref]") {

@@ -22,9 +22,9 @@ TEST_CASE("Make optional", "[make_optional]") {
 
   auto o3 = tl::make_optional<std::tuple<int, int, int, int>>(0, 1, 2, 3);
   REQUIRE(o3.filter([](auto v) { return std::get<0>(v) == 0; }).hasValue());
-  REQUIRE(o3.filter([](auto v) { return std::get<1>(v) == 0; }).hasValue());
-  REQUIRE(o3.filter([](auto v) { return std::get<2>(v) == 0; }).hasValue());
-  REQUIRE(o3.filter([](auto v) { return std::get<3>(v) == 0; }).hasValue());
+  REQUIRE(o3.filter([](auto v) { return std::get<1>(v) == 1; }).hasValue());
+  REQUIRE(o3.filter([](auto v) { return std::get<2>(v) == 2; }).hasValue());
+  REQUIRE(o3.filter([](auto v) { return std::get<3>(v) == 3; }).hasValue());
 
   auto o4 = tl::make_optional<std::vector<int>>({0, 1, 2, 3});
   REQUIRE(o4.filter([](auto v) { return v[0] == 0; }).hasValue());

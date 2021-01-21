@@ -1555,11 +1555,11 @@ inline constexpr bool operator==(const U &lhs, const optional<T> &rhs) {
 }
 template <class T, class U>
 inline constexpr bool operator!=(const optional<T> &lhs, const U &rhs) {
-  return not(lhs == rhs);
+  return !(lhs == rhs);
 }
 template <class T, class U>
 inline constexpr bool operator!=(const U &lhs, const optional<T> &rhs) {
-  return not(lhs == rhs);
+  return !(lhs == rhs);
 }
 template <class T, class U>
 inline constexpr bool operator<(const optional<T> &lhs, const U &rhs) {
@@ -1583,19 +1583,19 @@ inline constexpr bool operator>(const U &lhs, const optional<T> &rhs) {
 }
 template <class T, class U>
 inline constexpr bool operator<=(const optional<T> &lhs, const U &rhs) {
-  return not(lhs > rhs);
+  return !(lhs > rhs);
 }
 template <class T, class U>
 inline constexpr bool operator<=(const U &lhs, const optional<T> &rhs) {
-  return not(lhs > rhs);
+  return !(lhs > rhs);
 }
 template <class T, class U>
 inline constexpr bool operator>=(const optional<T> &lhs, const U &rhs) {
-  return not(lhs < rhs);
+  return !(lhs < rhs);
 }
 template <class T, class U>
 inline constexpr bool operator>=(const U &lhs, const optional<T> &rhs) {
-  return not(lhs < rhs);
+  return !(lhs < rhs);
 }
 
 template <class T,
